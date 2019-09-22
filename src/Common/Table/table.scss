@@ -1,0 +1,18 @@
+.Row,
+.Header__items {
+  display: flex;
+}
+.Row__item,
+.Header__item {
+  width: 30%;
+  min-width: 100px;
+  padding: 3px 2px;
+  border: 1px ridge rgb(223, 160, 170);
+  font-size: 1.2rem;
+}
+.Header__item {
+  font-weight: 600;
+}
+.Header__item--highlighted {
+  background-color: rgb(160, 196, 243);
+}
