@@ -1,3 +1,9 @@
+Tech: React, TypeScript, SCSS, BEM. Deployed on https://powerful-beyond-69262.herokuapp.com/. In progress.
+
+
+Data from Wikipedia.
+
+//////
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
