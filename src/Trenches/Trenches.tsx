@@ -37,16 +37,16 @@ const Trenches = () => {
     trench.itemsUnderWater
   ]);
 
-  function handleSort(e) {
+  const handleSort = e => {
     const clickedColumn = e.target.id;
     const clickedColumnIndex = columnNames.indexOf(clickedColumn);
     sortBy(clickedColumnIndex);
     if (clickedColumn === "Depth (m)") {
       updateTrenches(sortedTrenches.slice().reverse());
     }
-  }
+  };
 
-  function handleHeightChange(e) {
+  const handleHeightChange = e => {
     const input = e.target.value;
     changeHeight(input);
     updateTrenches(
@@ -71,7 +71,7 @@ const Trenches = () => {
         };
       })
     );
-  }
+  };
 
   return (
     <Fragment>

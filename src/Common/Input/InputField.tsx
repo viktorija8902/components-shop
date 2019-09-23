@@ -2,8 +2,8 @@ import React from "react";
 
 interface InputField {
   label: string;
-  onInputChange: (event: React.KeyboardEvent<HTMLButtonElement>) => void;
-  value: number;
+  onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: any;
 }
 
 const InputField = (prop: InputField) => (

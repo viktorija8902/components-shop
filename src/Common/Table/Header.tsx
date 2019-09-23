@@ -10,7 +10,7 @@ const Header = (prop: Header) => (
   <div className="Header">
     <div className="Header__items">
       {prop.columnNames.map((name, index) => (
-        <div
+        <button
           key={name}
           id={name}
           onClick={prop.onSort}
@@ -21,7 +21,7 @@ const Header = (prop: Header) => (
           }
         >
           {name}
-        </div>
+        </button>
       ))}
     </div>
   </div>
