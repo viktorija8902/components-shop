@@ -8,17 +8,22 @@ interface Table {
   rows: Array<Array<any>>;
   onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
   sortedByColumnIndex: number;
+  onRowClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const Table = (prop: Table) => (
-  <div className="Table">
+  <table className="Table">
     <Header
       columnNames={prop.columnNames}
       onSort={prop.onSort}
       sortedByColumnIndex={prop.sortedByColumnIndex}
     />
-    <Rows rows={prop.rows} sortedByColumnIndex={prop.sortedByColumnIndex} />
-  </div>
+    <Rows
+      rows={prop.rows}
+      sortedByColumnIndex={prop.sortedByColumnIndex}
+      onRowClick={prop.onRowClick}
+    />
+  </table>
 );
 
 export default Table;

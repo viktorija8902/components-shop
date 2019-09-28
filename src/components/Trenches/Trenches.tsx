@@ -2,8 +2,13 @@ import React, { Fragment, useState } from "react";
 import { trenches } from "./data";
 import Table from "../Common/Table/Table";
 import InputField from "../Common/Input/InputField";
+import Gallery from "../Common/Gallery/Gallery";
 import "./trenches.scss";
 
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
 const Trenches = () => {
   const columnNames = [
     "Name",
@@ -16,6 +21,7 @@ const Trenches = () => {
   const [sortedTrenches, updateTrenches] = useState(
     getInitialTrenches(trenches)
   );
+  const [trenchImages, updateImages] = useState<Array<GalleryImage>>([]);
 
   function getInitialTrenches(
     trenches: Array<{
@@ -73,8 +79,21 @@ const Trenches = () => {
     );
   };
 
+  const handleRowClick = e => {
+    const clickedTrenchName = e.target.id;
+    const clickedTrench = trenches.find(
+      trench => trench.name === clickedTrenchName
+    );
+    if (clickedTrench) {
+      const newImages = clickedTrench.images.map(image => ({
+        src: `/images/${image}`,
+        alt: `${clickedTrench.name}. ${clickedTrench.location}`
+      }));
+      updateImages(newImages);
+    }
+  };
   return (
-    <Fragment>
+    <div className="Trenches">
       <h1 className="Trenches__title">Deepest trenches</h1>
       <p className="Trenches__text">
         Enter height in meters to see how many items would fit under the water.
@@ -87,13 +106,18 @@ const Trenches = () => {
         value={yourHeight}
         onInputChange={handleHeightChange}
       />
-      <Table
-        columnNames={columnNames}
-        rows={rows}
-        onSort={handleSort}
-        sortedByColumnIndex={columnIndex}
-      />
-    </Fragment>
+      <div className="Trenches__body">
+        <Table
+          columnNames={columnNames}
+          rows={rows}
+          onSort={handleSort}
+          sortedByColumnIndex={columnIndex}
+          onRowClick={handleRowClick}
+        />
+        <Gallery images={trenchImages} />
+      </div>
+      <small>Data from wikipedia, https://www.britannica.com</small>
+    </div>
   );
 };
 
