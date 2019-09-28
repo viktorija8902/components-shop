@@ -4,14 +4,15 @@ import Row from "./Row";
 interface Rows {
   rows: Array<Array<any>>;
   sortedByColumnIndex: number;
+  onRowClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const Rows = (prop: Rows) => (
-  <div className="Rows">
+  <tbody className="Rows">
     {prop.rows.map(row => (
-      <Row key={Math.random()} values={row} />
+      <Row key={Math.random()} values={row} onRowClick={prop.onRowClick} />
     ))}
-  </div>
+  </tbody>
 );
 
 export default Rows;

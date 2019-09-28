@@ -1,6 +1,12 @@
+.Table {
+  width: 45%;
+}
 .Row,
 .Header__items {
   display: flex;
+}
+.Row {
+  cursor: pointer;
 }
 .Row__item,
 .Header__item {

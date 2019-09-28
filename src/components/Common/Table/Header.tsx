@@ -7,8 +7,8 @@ interface Header {
 }
 
 const Header = (prop: Header) => (
-  <div className="Header">
-    <div className="Header__items">
+  <thead className="Header">
+    <tr className="Header__items">
       {prop.columnNames.map((name, index) => (
         <button
           key={name}
@@ -23,8 +23,8 @@ const Header = (prop: Header) => (
           {name}
         </button>
       ))}
-    </div>
-  </div>
+    </tr>
+  </thead>
 );
 
 export default Header;
