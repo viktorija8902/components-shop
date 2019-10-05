@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { trenches } from "./data";
 import Table from "../Common/Table/Table";
 import InputField from "../Common/Input/InputField";
@@ -43,8 +43,8 @@ const Trenches = () => {
     trench.itemsUnderWater
   ]);
 
-  const handleSort = e => {
-    const clickedColumn = e.target.id;
+  const handleSort = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const clickedColumn = (event.target as HTMLElement).id;
     const clickedColumnIndex = columnNames.indexOf(clickedColumn);
     sortBy(clickedColumnIndex);
     if (clickedColumn === "Depth (m)") {
@@ -52,7 +52,7 @@ const Trenches = () => {
     }
   };
 
-  const handleHeightChange = e => {
+  const handleHeightChange = (e: { target: { value: string } }) => {
     const input = e.target.value;
     changeHeight(input);
     updateTrenches(
@@ -79,8 +79,8 @@ const Trenches = () => {
     );
   };
 
-  const handleRowClick = e => {
-    const clickedTrenchName = e.target.id;
+  const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
+    const clickedTrenchName = (e.target as HTMLElement).id;
     const clickedTrench = trenches.find(
       trench => trench.name === clickedTrenchName
     );

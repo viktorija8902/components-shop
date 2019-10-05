@@ -8,7 +8,7 @@ interface Table {
   rows: Array<Array<any>>;
   onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
   sortedByColumnIndex: number;
-  onRowClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onRowClick: (event: React.MouseEvent<HTMLTableRowElement>) => void;
 }
 
 const Table = (prop: Table) => (

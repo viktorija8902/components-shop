@@ -4,7 +4,7 @@ import Row from "./Row";
 interface Rows {
   rows: Array<Array<any>>;
   sortedByColumnIndex: number;
-  onRowClick: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onRowClick: (event: React.MouseEvent<HTMLTableRowElement>) => void;
 }
 
 const Rows = (prop: Rows) => (
