@@ -14,7 +14,7 @@ const Trenches = () => {
     "Name",
     "Location",
     "Depth (m)",
-    "How many of you would fit under the ocean?"
+    "How many of you would fit under the ocean?",
   ];
   const [yourHeight, changeHeight] = useState("");
   const [columnIndex, sortBy] = useState(2);
@@ -30,17 +30,17 @@ const Trenches = () => {
       depth: { meters: number };
     }>
   ) {
-    return trenches.slice().map(trench => ({
+    return trenches.slice().map((trench) => ({
       ...trench,
-      itemsUnderWater: "?"
+      itemsUnderWater: "?",
     }));
   }
 
-  const rows = sortedTrenches.map(trench => [
+  const rows = sortedTrenches.map((trench) => [
     trench.name,
     trench.location,
     trench.depth.meters,
-    trench.itemsUnderWater
+    trench.itemsUnderWater,
   ]);
 
   const handleSort = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -56,24 +56,24 @@ const Trenches = () => {
     const input = e.target.value;
     changeHeight(input);
     updateTrenches(
-      sortedTrenches.map(trench => {
+      sortedTrenches.map((trench) => {
         const height = Number.parseFloat(input);
         if (Number.isNaN(height)) {
           return {
             ...trench,
-            itemsUnderWater: "?"
+            itemsUnderWater: "?",
           };
         }
         const itemsUnderWater = trench.depth.meters / height;
         if (Number.isNaN(itemsUnderWater) || itemsUnderWater === Infinity) {
           return {
             ...trench,
-            itemsUnderWater: "?"
+            itemsUnderWater: "?",
           };
         }
         return {
           ...trench,
-          itemsUnderWater: itemsUnderWater.toFixed(1)
+          itemsUnderWater: itemsUnderWater.toFixed(1),
         };
       })
     );
@@ -82,12 +82,12 @@ const Trenches = () => {
   const handleRowClick = (e: React.MouseEvent<HTMLTableRowElement>) => {
     const clickedTrenchName = (e.target as HTMLElement).id;
     const clickedTrench = trenches.find(
-      trench => trench.name === clickedTrenchName
+      (trench) => trench.name === clickedTrenchName
     );
     if (clickedTrench) {
-      const newImages = clickedTrench.images.map(image => ({
-        src: `/images/${image}`,
-        alt: `${clickedTrench.name}. ${clickedTrench.location}`
+      const newImages = clickedTrench.images.map((image) => ({
+        src: `/images/trenches/${image}`,
+        alt: `${clickedTrench.name}. ${clickedTrench.location}`,
       }));
       updateImages(newImages);
     }
