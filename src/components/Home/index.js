@@ -5,7 +5,11 @@ const Home = () => {
   const text = (
     <Fragment>
       <p>Click on the menu items to get some facts about ocean.</p>
-      <small>Content creation in progress.</small>
+      <small>
+        Content creation in progress. Data from wikipedia,
+        https://www.britannica.com
+        https://www.coralreefimagebank.org/coral-bleaching
+      </small>
     </Fragment>
   );
 
