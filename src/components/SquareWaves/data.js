@@ -1,3 +1,4 @@
+//TODO give better alt values everywhere
 export const squareWavesImages = [
   {
     src: "/images/squareWaves/square_waves.jpeg",

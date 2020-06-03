@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Menu from "./components/Menu";
 import "./App.scss";
 const Home = lazy(() => import("./components/Home"));
 const Trenches = lazy(() => import("./components/Trenches/Trenches"));
@@ -10,20 +10,7 @@ const RingOfFire = lazy(() => import("./components/RingOfFire/index"));
 const App = () => {
   return (
     <Router>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/trenches">Deepest trenches</Link>
-        </li>
-        <li>
-          <Link to="/ring-of-fire">Ring of fire</Link>
-        </li>
-        <li>
-          <Link to="/square-waves">Square waves</Link>
-        </li>
-      </ul>
+      <Menu />
       {/* todo add error boundary */}
       <Suspense fallback={<div>Preparing data...</div>}>
         <Switch>

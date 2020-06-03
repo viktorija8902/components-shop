@@ -10,18 +10,18 @@ const Header = (prop: Header) => (
   <thead className="Header">
     <tr className="Header__items">
       {prop.columnNames.map((name, index) => (
-        <button
+        <th
           key={name}
-          id={name}
-          onClick={prop.onSort}
           className={
             index === prop.sortedByColumnIndex
               ? "Header__item Header__item--highlighted"
               : "Header__item"
           }
+          id={name}
+          onClick={prop.onSort}
         >
           {name}
-        </button>
+        </th>
       ))}
     </tr>
   </thead>

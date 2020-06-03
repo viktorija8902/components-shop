@@ -1,13 +1,12 @@
-import React, { Fragment } from "react";
-//import styled, { withTheme } from '.scss'
+import React from "react";
 import Gallery from "./../Gallery/Gallery";
 
 const LibraryWindow = ({ title, text, images }) => (
-  <Fragment>
+  <article>
     <h1>{title}</h1>
     <p>{text}</p>
     {images && <Gallery images={images} />}
-  </Fragment>
+  </article>
 );
 
 export default LibraryWindow;

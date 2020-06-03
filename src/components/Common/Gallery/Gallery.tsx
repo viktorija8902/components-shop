@@ -5,14 +5,12 @@ interface Gallery {
   images: Array<{ src: string; alt: string }>;
 }
 
-const Gallery = (prop: Gallery) => {
-  return (
-    <div className="Gallery">
-      {prop.images.map(image => (
-        <img key={image.src} src={image.src} alt={image.alt} />
-      ))}
-    </div>
-  );
-};
+const Gallery = (prop: Gallery) => (
+  <div className="Gallery">
+    {prop.images.map((image) => (
+      <img key={image.src} src={image.src} alt={image.alt} />
+    ))}
+  </div>
+);
 
 export default Gallery;

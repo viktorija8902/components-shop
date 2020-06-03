@@ -93,7 +93,7 @@ const Trenches = () => {
     }
   };
   return (
-    <div className="Trenches">
+    <article className="Trenches">
       <h1 className="Trenches__title">Deepest trenches</h1>
       <p className="Trenches__text">
         Enter height in meters to see how many items would fit under the water.
@@ -117,7 +117,7 @@ const Trenches = () => {
         <Gallery images={trenchImages} />
       </div>
       <small>Data from wikipedia, https://www.britannica.com</small>
-    </div>
+    </article>
   );
 };
 
