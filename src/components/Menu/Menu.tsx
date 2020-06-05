@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Menu.scss";
 
 const Menu = () => {
   const menuItems = [
@@ -14,7 +15,18 @@ const Menu = () => {
       <ul>
         {menuItems.map((item) => (
           <li key={item.name} className="Menu__item">
-            <Link to={item.link}>{item.name}</Link>
+            <NavLink
+              key={item.name}
+              to={item.link}
+              className="Menu__link"
+              aria-current="page"
+              activeStyle={{
+                fontWeight: "bold",
+                color: "darkBlue",
+              }}
+            >
+              {item.name}
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Menu from "./components/Menu";
+import Menu from "./components/Menu/Menu";
 import "./App.scss";
 const Home = lazy(() => import("./components/Home"));
 const Trenches = lazy(() => import("./components/Trenches/Trenches"));
