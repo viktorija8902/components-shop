@@ -1,5 +1,5 @@
 import React from "react";
-import Rows from "./Rows";
+import Rows from "./Body";
 import Header from "./Header";
 import "./table.scss";
 
@@ -13,6 +13,7 @@ interface Table {
 
 const Table = (prop: Table) => (
   <table className="Table">
+    <caption>World's deepest trenches</caption>
     <Header
       columnNames={prop.columnNames}
       onSort={prop.onSort}
