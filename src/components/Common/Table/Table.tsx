@@ -6,7 +6,7 @@ import "./table.scss";
 interface Table {
   columnNames: Array<string>;
   rows: Array<Array<any>>;
-  onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onSort: (event: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
   sortedByColumnIndex: number;
   onRowClick: (event: React.MouseEvent<HTMLTableRowElement>) => void;
 }

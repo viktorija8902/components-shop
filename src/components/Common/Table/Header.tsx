@@ -2,7 +2,7 @@ import React from "react";
 
 interface Header {
   columnNames: Array<string>;
-  onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onSort: (event: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
   sortedByColumnIndex: number;
 }
 

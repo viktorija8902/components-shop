@@ -43,7 +43,7 @@ const Trenches = () => {
     trench.itemsUnderWater,
   ]);
 
-  const handleSort = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSort = (event: React.MouseEvent<HTMLTableHeaderCellElement>) => {
     const clickedColumn = (event.target as HTMLElement).id;
     const clickedColumnIndex = columnNames.indexOf(clickedColumn);
     sortBy(clickedColumnIndex);
