@@ -10,27 +10,35 @@ const RingOfFire = lazy(() => import("./components/RingOfFire/index"));
 const App = () => {
   return (
     <Router>
-      <Menu />
-      {/* todo add error boundary */}
-      <Suspense fallback={<div>Preparing data...</div>}>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/trenches">
-            <Trenches />
-          </Route>
-          <Route path="/ring-of-fire">
-            <RingOfFire />
-          </Route>
-          <Route path="/square-waves">
-            <SquareWaves />
-          </Route>
-          {/* <Route path="*">
+      <div className="App">
+        <header className="App__header">
+          <h1>Welcome to Ocean Fun</h1>
+        </header>
+        <Menu />
+        {/* todo add error boundary */}
+        <main className="App__page">
+          <Suspense fallback={<div>Preparing data...</div>}>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/trenches">
+                <Trenches />
+              </Route>
+              <Route path="/ring-of-fire">
+                <RingOfFire />
+              </Route>
+              <Route path="/square-waves">
+                <SquareWaves />
+              </Route>
+              {/* <Route path="*">
             <NotFound />
           </Route> */}
-        </Switch>
-      </Suspense>
+            </Switch>
+          </Suspense>
+        </main>
+        <footer className="App__footer"></footer>
+      </div>
     </Router>
   );
 };

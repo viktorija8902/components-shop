@@ -1,7 +1,40 @@
 $blue: #62dfba;
+$appBlue: rgb(89, 89, 190);
+
+.App__header {
+  grid-area: header;
+  background-color: darkcyan;
+  box-shadow: 0 0 6px $appBlue;
+}
+.Menu {
+  grid-area: menu;
+}
+.App__page {
+  grid-area: page;
+}
+.App__footer {
+  grid-area: footer;
+  background-color: darkcyan;
+  box-shadow: 2 0 6px $appBlue;
+}
 
 .App {
-  text-align: center;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 20em auto;
+  grid-template-rows: 5em auto 5em;
+  grid-template-areas:
+    "header header"
+    "menu page"
+    "footer footer";
+  gap: 1em 1em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+p {
+  font-size: 1.2em;
 }
 
 .App-logo {

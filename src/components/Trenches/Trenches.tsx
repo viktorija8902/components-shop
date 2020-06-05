@@ -94,7 +94,7 @@ const Trenches = () => {
   };
   return (
     <article className="Trenches">
-      <h1 className="Trenches__title">Deepest trenches</h1>
+      <h2 className="Trenches__title">Deepest trenches</h2>
       <p className="Trenches__text">
         Enter height in meters to see how many items would fit under the water.
         It can be your height or height of buildings (e.g. CN Tower's height -
